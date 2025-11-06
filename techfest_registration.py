@@ -22,7 +22,14 @@ for i in range(num_participants):
     }
     participants.append(participant)
 
-    print("\nRegistered Participants:")
-    for i in range(len(participants)):
-        participant = participants[i]
-        print(f"{i + 1}. {participant['name']} - {participant['track']}")
+print("\nRegistered Participants:")
+for i in range(len(participants)):
+    participant = participants[i]
+    print(f"{i + 1}. {participant['name']} - {participant['track']}")
+
+unique_tracks = set(participant['track'] for participant in participants)
+print("\nTracks offered in this event:", ", ".join(unique_tracks))
+if len(unique_tracks) < 2:
+        print("Not enough variety in tracks.")
+
+

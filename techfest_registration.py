@@ -32,4 +32,18 @@ print("\nTracks offered in this event:", ", ".join(unique_tracks))
 if len(unique_tracks) < 2:
         print("Not enough variety in tracks.")
 
+names_seen = set()  # Set to track names that have already appeared
+duplicate_found = False
+
+for participant in participants:
+    if participant['name'] in names_seen:
+        print(f"Duplicate name found: {participant['name']}")
+        duplicate_found = True
+        break
+    names_seen.add(participant['name'])
+
+if not duplicate_found:
+    print("No duplicate names.")
+
+
 

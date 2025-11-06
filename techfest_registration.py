@@ -54,7 +54,7 @@ for participant in participants:
     else:
         track_summary[track] = 1
 
-# Display the summary report
+
 print("\nParticipants per track:")
 for track, count in track_summary.items():
     print(f"{track}: {count}")

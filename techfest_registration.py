@@ -8,16 +8,21 @@ if num_participants <= 0:
 else:
     participants = num_participants
 
-participants = []  # List to store participants' data
+participants = []
 
 for i in range(num_participants):
     print(f"\nEntering details for participant {i + 1}:")
     name = input("Enter participant name: ")
     track = input("Enter chosen track: ")
 
-    # Store each record as a dictionary and append it to the list
+
     participant = {
         "name": name,
         "track": track
     }
     participants.append(participant)
+
+    print("\nRegistered Participants:")
+    for i in range(len(participants)):
+        participant = participants[i]
+        print(f"{i + 1}. {participant['name']} - {participant['track']}")
